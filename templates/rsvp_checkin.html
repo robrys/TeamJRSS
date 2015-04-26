@@ -1,0 +1,46 @@
+<!doctype html>
+{% if done == True %}
+	<title>  Please enjoy the event! </title>
+	<body><p>
+	{% if checking_in == True %}
+		Thank you for checking in!
+	{% else %}
+		Thank you for RSVPing!
+	{% endif %}
+	</p></body>
+{% elif current_state == "start" %}
+	<title> RSVP for our event! </title>
+	<body>
+	{% if checking_in == True %}
+		<form method="POST" action={{ "/checkin/" + tn_event }}>
+	{% else %}
+		<form method="POST" action={{ "/rsvp/" + tn_event }}>
+	{% endif %}
+		Enter your Email Address or NYU ID to RSVP: <input type="text" name="email"><br>
+			<input type="hidden" name="current_state" value="checked_email"> 
+			<input type="hidden" name="checking_in" value={{ checking_in }}>
+			<input type="submit" value="Submit">
+	</form>
+	</body>
+{% elif current_state == "fillout_form" %}
+	<title>Please fill out your information.</title>
+	<body>
+	<p> We were unable to find you in the system.</p>
+	<p> Please register by filling out the short form below. </p>
+	{% if checking_in == True %}
+		<form method="POST" action={{ "/checked_in/" + tn_event }}>
+	{% else %}
+		<form method="POST" action={{ "/rsvpd/" + tn_event }}>
+	{% endif %}
+			Name: <input type="text" name="name"><br>
+			N#: <input type="text" name="nyu_num"><br>
+			Gender: 
+			<input type="radio" name="gender" value="male">Male   
+			<input type="radio" name="gender" value="female">Female
+			<input type="radio" name="gender" value="other">Other
+			<input type="hidden" name="email" value={{ email_addr }}> <br>
+			<input type="hidden" name="checking_in" value={{ checking_in }}>
+			<input type="submit" value="Submit">
+	</form>
+	</body>
+{% endif %}
