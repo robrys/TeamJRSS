@@ -20,7 +20,8 @@ Jessica Johnson, Robert Ryszewski, Mariano Salinas, William Shi
 3. After the event, a follow-up email can be sent asking attendees to list their skills for matching with other attendees for future events
  * Email should include a personalized link to update their skills at any time in the future
  * System should periodically send out a reminder every so many weeks/months, as their skills will change
-	
+
+*Please note that this code relies on actual event IDs in the API. Thus "localhost:5000/rsvp" or "localhost:5000/rsvp/100" will not work, but "localhost:5000/541f60e5ff7ba819334c8ffa" for an actual event will.*	
 
 **Design Benefits:**
  * Pre-event RSVP takes care of a good portion of attendees, reducing congestion
@@ -31,10 +32,12 @@ Jessica Johnson, Robert Ryszewski, Mariano Salinas, William Shi
  
 **Design Flexibility:**
  * Under worst case conditions, can make check in page publicly accessible during time of the event
+  * Can provide a human-friendly link alias
   * Users can check in on their phones in a distributed manner
  * Multiple check-in stations can be planned in advance for larger events
 
 **Goals for Future Technical Improvement:**
+ * Provide a respectable graphical user interface/website design
  * Finish only missing functionality in flush_attendees(), which updates the event and its list of attendees on the API
  * Use JS or a similar tool to ensure the fields in the form are filled out, and correctly
   * To ensure API Person object validity, and to prevent unhandled "Bad Request" exceptions in this program
