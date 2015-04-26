@@ -38,6 +38,7 @@ Jessica Johnson, Robert Ryszewski, Mariano Salinas, William Shi
 
 **Goals for Future Technical Improvement:**
  * Provide a respectable graphical user interface/website design
+ * Fix lack of verifying/any security when interacting with the API, done due to dependency problems with Ubuntu
  * Finish only missing functionality in flush_attendees(), which updates the event and its list of attendees on the API
  * Use JS or a similar tool to ensure the fields in the form are filled out, and correctly
   * To ensure API Person object validity, and to prevent unhandled "Bad Request" exceptions in this program
