@@ -2,7 +2,7 @@
 **Tech@NYU - Event Check-In** (April 24th, 2015)
 
 **Team Members:**
-Jessica Johnson, Robert Ryszewski, Mariano Salinas, William Shi
+Jessica Joseph, Robert Ryszewski, Mariano Salinas, William Shi
 
 **The Problem:**
   Getting attendees of events properly checked in to the API, with their NYU N#s (if any).
